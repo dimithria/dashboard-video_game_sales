@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Video Game Sales Analytics</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <base target="_blank">
+</head>
+<body>
+    <header class="header">
+        <div>
+            <h1 data-en="🎮 VGChartz Analytics Dashboard" data-pt="🎮 Painel de Análise VGChartz">🎮 Analytics Dashboard</h1>
+            <div class="header-subtitle" data-en="Interactive Video Game Sales Analysis" data-pt="Análise Interativa de Vendas de Videogames">Interactive Video Game Sales Analysis</div>
+        </div>
+        <button class="lang-btn" onclick="toggleLanguage()">
+            <span>🌐</span>
+            <span id="lang-text">Português</span>
+        </button>
+    </header>
+
+    <section class="hero">
+        <h2 data-en="Video Game Sales Data (1971-2024)" data-pt="Dados de Vendas de Videogames (1971-2024)">Video Game Sales Data (1971-2024)</h2>
+        <p data-en="Video game sales from North America, Japan, the EU, Africa, and the rest of the world for 64,016 titles released from 1971-2024, including information like critic's score, genre, console, and more." data-pt="Vendas de videogames da América do Norte, Japão, UE, África e resto do mundo para 64.016 títulos lançados de 1971-2024, incluindo informações como pontuação do crítico, gênero, console e mais.">
+            Video game sales from North America, Japan, the EU, Africa, and the rest of the world for 64,016 titles released from 1971-2024, including information like critic's score, genre, console, and more.
+        </p>
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-value">64,016</div>
+                <div class="stat-label" data-en="Titles" data-pt="Títulos">Titles</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">81</div>
+                <div class="stat-label" data-en="Consoles" data-pt="Consoles">Consoles</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">20</div>
+                <div class="stat-label" data-en="Genres" data-pt="Gêneros">Genres</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">53</div>
+                <div class="stat-label" data-en="Years" data-pt="Anos">Years</div>
+            </div>
+        </div>
+    </section>
+
+    <nav class="nav-menu">
+        <button class="nav-btn active" onclick="showSection('overview')">
+            <span class="icon">📊</span>
+            <span data-en="Overview" data-pt="Visão Geral">Overview</span>
+        </button>
+        <button class="nav-btn" onclick="showSection('top-titles')">
+            <span class="icon">🏆</span>
+            <span data-en="Top Titles" data-pt="Top Títulos">Top Titles</span>
+        </button>
+        <button class="nav-btn" onclick="showSection('timeline')">
+            <span class="icon">📈</span>
+            <span data-en="Sales Timeline" data-pt="Linha do Tempo de Vendas">Sales Timeline</span>
+        </button>
+        <button class="nav-btn" onclick="showSection('consoles')">
+            <span class="icon">🎮</span>
+            <span data-en="Console Analysis" data-pt="Análise de Consoles">Console Analysis</span>
+        </button>
+        <button class="nav-btn" onclick="showSection('regional')">
+            <span class="icon">🌍</span>
+            <span data-en="Regional Differences" data-pt="Diferenças Regionais">Regional Differences</span>
+        </button>
+    </nav>
+
+    <main class="content">
+        <!-- OVERVIEW SECTION -->
+        <section id="overview" class="section active">
+            <div class="grid-2">
+                <div class="card">
+                    <h3 class="card-title"><span class="icon">🎭</span> <span data-en="Sales by Genre" data-pt="Vendas por Gênero">Sales by Genre</span></h3>
+                    <div class="chart-container">
+                        <canvas id="genreChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card-title"><span class="icon">📺</span> <span data-en="Sales by Console (Top 15)" data-pt="Vendas por Console (Top 15)">Sales by Console (Top 15)</span></h3>
+                    <div class="chart-container">
+                        <canvas id="consoleChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="card">
+                    <h3 class="card-title"><span class="icon">🏢</span> <span data-en="Top Publishers" data-pt="Top Publicadoras">Top Publishers</span></h3>
+                    <div class="chart-container">
+                        <canvas id="publisherChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card-title"><span class="icon">📅</span> <span data-en="Games Released per Year" data-pt="Jogos Lançados por Ano">Games Released per Year</span></h3>
+                    <div class="chart-container">
+                        <canvas id="gamesPerYearChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="insight-box">
+                <h4 data-en="💡 Key Insight" data-pt="💡 Insight Principal">💡 Key Insight</h4>
+                <p data-en="Action and Shooter genres dominate the market, with EA Sports and Activision leading publishers. The PS2 remains the best-selling console of all time with over 1.2 billion units sold across all titles." data-pt="Os gêneros Ação e Shooter dominam o mercado, com EA Sports e Activision como principais publicadoras. O PS2 permanece o console mais vendido de todos os tempos com mais de 1,2 bilhão de unidades vendidas em todos os títulos.">
+                    Action and Shooter genres dominate the market, with EA Sports and Activision leading publishers. The PS2 remains the best-selling console of all time with over 1.2 billion units sold across all titles.
+                </p>
+            </div>
+        </section>
+
+        <!-- TOP TITLES SECTION -->
+        <section id="top-titles" class="section">
+            <div class="card">
+                <h3 class="card-title"><span class="icon">🏆</span> <span data-en="Top 50 Best-Selling Titles Worldwide" data-pt="Top 50 Títulos Mais Vendidos no Mundo">Top 50 Best-Selling Titles Worldwide</span></h3>
+                <div class="chart-container-large">
+                    <canvas id="topTitlesChart"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="card-title"><span class="icon">📋</span> <span data-en="Top 20 Titles Table" data-pt="Tabela dos Top 20 Títulos">Top 20 Titles Table</span></h3>
+                <div style="overflow-x: auto;">
+                    <table class="data-table" id="topTitlesTable">
+                        <thead>
+                            <tr>
+                                <th data-en="Rank" data-pt="Posição">Rank</th>
+                                <th data-en="Title" data-pt="Título">Title</th>
+                                <th data-en="Total Sales (M)" data-pt="Vendas Totais (M)">Total Sales (M)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="topTitlesBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIMELINE SECTION -->
+        <section id="timeline" class="section">
+            <div class="card">
+                <h3 class="card-title"><span class="icon">📈</span> <span data-en="Total Sales by Year" data-pt="Vendas Totais por Ano">Total Sales by Year</span></h3>
+                <div class="chart-container-large">
+                    <canvas id="salesTimelineChart"></canvas>
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="card">
+                    <h3 class="card-title"><span class="icon">📊</span> <span data-en="Regional Sales Over Time" data-pt="Vendas Regionais ao Longo do Tempo">Regional Sales Over Time</span></h3>
+                    <div class="chart-container">
+                        <canvas id="regionalTimelineChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card-title"><span class="icon">🔍</span> <span data-en="Analysis" data-pt="Análise">Analysis</span></h3>
+                    <div class="insight-box">
+                        <h4 data-en="Peak Year: 2008" data-pt="Ano de Pico: 2008">Peak Year: 2008</h4>
+                        <p data-en="The industry peaked in 2008 with 538M units sold. This coincides with the late PS2/early PS3/Xbox 360 era, when gaming became mainstream. Sales have declined since due to digital distribution and mobile gaming." data-pt="A indústria atingiu o pico em 2008 com 538M de unidades vendidas. Isso coincide com o final da era PS2/início do PS3/Xbox 360, quando os jogos se tornaram mainstream. As vendas diminuíram desde então devido à distribuição digital e jogos mobile.">
+                            The industry peaked in 2008 with 538M units sold. This coincides with the late PS2/early PS3/Xbox 360 era, when gaming became mainstream. Sales have declined since due to digital distribution and mobile gaming.
+                        </p>
+                    </div>
+                    <div class="insight-box">
+                        <h4 data-en="Growth Period: 1995-2008" data-pt="Período de Crescimento: 1995-2008">Growth Period: 1995-2008</h4>
+                        <p data-en="The industry experienced explosive growth from 1995 to 2008, with the PlayStation revolutionizing 3D gaming and the PS2/Xbox/GC generation expanding the market significantly." data-pt="A indústria experimentou crescimento explosivo de 1995 a 2008, com o PlayStation revolucionando os jogos 3D e a geração PS2/Xbox/GC expandindo significativamente o mercado.">
+                            The industry experienced explosive growth from 1995 to 2008, with the PlayStation revolutionizing 3D gaming and the PS2/Xbox/GC generation expanding the market significantly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONSOLES SECTION -->
+        <section id="consoles" class="section">
+            <div class="card">
+                <h3 class="card-title"><span class="icon">🎮</span> <span data-en="Console-Genre Specialization Heatmap" data-pt="Mapa de Calor de Especialização Console-Gênero">Console-Genre Specialization Heatmap</span></h3>
+                <p style="color: var(--text-secondary); margin-bottom: 15px;" data-en="Darker colors indicate higher sales. This shows which genres dominate each console." data-pt="Cores mais escuras indicam vendas mais altas. Isso mostra quais gêneros dominam cada console.">
+                    Darker colors indicate higher sales. This shows which genres dominate each console.
+                </p>
+                <div class="chart-container-large">
+                    <canvas id="heatmapChart"></canvas>
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="card">
+                    <h3 class="card-title"><span class="icon">📊</span> <span data-en="Top Genre per Console" data-pt="Gênero Principal por Console">Top Genre per Console</span></h3>
+                    <div class="chart-container">
+                        <canvas id="consoleGenreChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card-title"><span class="icon">💡</span> <span data-en="Key Findings" data-pt="Descobertas Principais">Key Findings</span></h3>
+                    <div class="insight-box">
+                        <h4 data-en="Genre Specialization" data-pt="Especialização por Gênero">Genre Specialization</h4>
+                        <p data-en="• PS2 & PS3: Dominated by Sports and Action games" data-pt="• PS2 & PS3: Dominados por jogos de Esportes e Ação">
+                            • PS2 & PS3: Dominated by Sports and Action games<br>
+                            • Xbox 360: Shooter paradise (Halo, Call of Duty)<br>
+                            • Nintendo consoles: Platform and Fighting games<br>
+                            • PC: Simulation and Strategy specialization<br>
+                            • Handhelds (GBA, DS, 3DS): Platform and RPG focus
+                        </p>
+                    </div>
+                    <div class="insight-box">
+                        <h4 data-en="Console Identity" data-pt="Identidade do Console">Console Identity</h4>
+                        <p data-en="Each console developed a unique identity based on its controller and audience. Xbox became the shooter console, Nintendo the family-friendly platformer, and PlayStation the all-rounder." data-pt="Cada console desenvolveu uma identidade única baseada em seu controle e público. O Xbox tornou-se o console de shooters, a Nintendo o de plataformas familiares, e o PlayStation o mais versátil.">
+                            Each console developed a unique identity based on its controller and audience. Xbox became the shooter console, Nintendo the family-friendly platformer, and PlayStation the all-rounder.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REGIONAL SECTION -->
+        <section id="regional" class="section">
+            <div class="grid-2">
+                <div class="card">
+                    <h3 class="card-title"><span class="icon">🇯🇵</span> <span data-en="Japan Hits (Flop Elsewhere)" data-pt="Sucessos no Japão (Fracasso em Outros Lugares)">Japan Hits (Flop Elsewhere)</span></h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px;" data-en="Games where Japan accounts for >50% of total sales" data-pt="Jogos onde o Japão representa >50% das vendas totais">
+                        Games where Japan accounts for >50% of total sales
+                    </p>
+                    <div style="overflow-x: auto; max-height: 400px; overflow-y: auto;">
+                        <table class="data-table" id="japanHitsTable">
+                            <thead>
+                                <tr>
+                                    <th data-en="Title" data-pt="Título">Title</th>
+                                    <th data-en="Console" data-pt="Console">Console</th>
+                                    <th data-en="JP %" data-pt="JP %">JP %</th>
+                                    <th data-en="Total (M)" data-pt="Total (M)">Total (M)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="japanHitsBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card-title"><span class="icon">🇺🇸</span> <span data-en="North America Hits (Flop in Japan)" data-pt="Sucessos na América do Norte (Fracasso no Japão)">North America Hits (Flop in Japan)</span></h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px;" data-en="Games where NA accounts for >50% of total sales" data-pt="Jogos onde a NA representa >50% das vendas totais">
+                        Games where NA accounts for >50% of total sales
+                    </p>
+                    <div style="overflow-x: auto; max-height: 400px; overflow-y: auto;">
+                        <table class="data-table" id="naHitsTable">
+                            <thead>
+                                <tr>
+                                    <th data-en="Title" data-pt="Título">Title</th>
+                                    <th data-en="Console" data-pt="Console">Console</th>
+                                    <th data-en="NA %" data-pt="NA %">NA %</th>
+                                    <th data-en="Total (M)" data-pt="Total (M)">Total (M)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="naHitsBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="card-title"><span class="icon">🌍</span> <span data-en="Regional Sales Distribution" data-pt="Distribuição de Vendas Regionais">Regional Sales Distribution</span></h3>
+                <div class="chart-container">
+                    <canvas id="regionalDistChart"></canvas>
+                </div>
+            </div>
+            <div class="insight-box">
+                <h4 data-en="🌏 Cultural Differences in Gaming" data-pt="🌏 Diferenças Culturais nos Jogos">🌏 Cultural Differences in Gaming</h4>
+                <p data-en="Japanese gamers prefer RPGs, visual novels, and unique IPs like Hot Shots Golf. Western audiences gravitate toward shooters (Call of Duty, Halo) and sports games (FIFA, Madden). This reflects broader cultural preferences for storytelling vs. competitive multiplayer experiences." data-pt="Os jogadores japoneses preferem RPGs, novels visuais e IPs únicas como Hot Shots Golf. O público ocidental tende a shooters (Call of Duty, Halo) e jogos de esportes (FIFA, Madden). Isso reflete preferências culturais mais amplas por narrativa vs. experiências multijogador competitivas.">
+                    Japanese gamers prefer RPGs, visual novels, and unique IPs like Hot Shots Golf. Western audiences gravitate toward shooters (Call of Duty, Halo) and sports games (FIFA, Madden). This reflects broader cultural preferences for storytelling vs. competitive multiplayer experiences.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
