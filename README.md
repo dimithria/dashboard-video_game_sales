@@ -1,75 +1,168 @@
-# 🎮 Analytics Dashboard
+# 🎮 VGChartz Analytics Dashboard
 
-Um painel interativo de análise de vendas de videogames com dados de 1971-2024.
+<div align="center">
+
+Um painel interativo de análise de vendas de videogames com dados de **64.016 títulos** lançados entre **1971-2024**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Frontend](https://img.shields.io/badge/Frontend-100%25-blue)
+![Responsive](https://img.shields.io/badge/Responsive-Mobile%2FTablet%2FDesktop-success)
+![Bilingual](https://img.shields.io/badge/Bilingual-EN%2FPT--BR-brightgreen)
 
 **[English](#english) | [Português](#português)**
+
+</div>
+
+---
+
+## 📚 Índice
+
+- [Português](#português)
+  - [Descrição](#descrição)
+  - [Características](#características-principais)
+  - [Estrutura de Arquivos](#estrutura-de-arquivos)
+  - [Instalação e Uso](#instalação-e-uso)
+  - [Tecnologias](#tecnologias-utilizadas)
+  - [Dados](#dados)
+  - [Contribuindo](#contribuindo)
+- [English](#english)
 
 ---
 
 ## Português
 
-### 📋 Descrição do Projeto
+### 📋 Descrição
 
-O VGChartz Analytics Dashboard é uma aplicação web interativa que apresenta análises detalhadas de vendas de videogames globais. Com dados de mais de 64 mil títulos lançados entre 1971 e 2024, o dashboard oferece visualizações em tempo real dos trends de mercado, preferências regionais e especializações de gênero por console.
+O **VGChartz Analytics Dashboard** é uma aplicação web interativa e responsiva que apresenta análises detalhadas e em tempo real de vendas de videogames globais. Com dados de mais de **64 mil títulos** lançados entre 1971 e 2024, o dashboard oferece visualizações dinâmicas dos trends de mercado, preferências regionais, especializações de gênero por console e evolução histórica das vendas.
+
+Este projeto foi desenvolvido como parte do programa **Maven Analytics** e demonstra proficiência em análise de dados, visualização interativa e desenvolvimento web frontend.
 
 ### 🎯 Características Principais
 
-- **5 Seções de Análise:**
-  - 📊 **Visão Geral**: Gêneros, consoles, publicadoras e histórico de lançamentos
-  - 🏆 **Top Títulos**: Top 50 títulos mais vendidos com tabela do top 20
-  - 📈 **Linha do Tempo**: Evolução de vendas por ano e vendas regionais
-  - 🎮 **Análise de Consoles**: Mapa de calor console-gênero e especialização
-  - 🌍 **Diferenças Regionais**: Análise de preferências de NA, Japão e PAL
+#### 📊 **5 Seções de Análise Interativa:**
 
-- **Bilíngue**: Suporte completo para Inglês 🇺🇸 e Português 🇧🇷
-- **Design Responsivo**: Funciona perfeitamente em desktop, tablet e mobile
-- **Gráficos Interativos**: Utilizando Chart.js para visualizações dinâmicas
-- **Dark Mode**: Interface moderna com tema escuro
-- **100% Frontend**: Sem dependências de backend
+1. **Visão Geral** - Estatísticas gerais do mercado
+   - Distribuição por gênero
+   - Consoles mais populares
+   - Publicadoras líderes
+   - Histórico de lançamentos por década
+
+2. **Top Títulos** - Títulos mais vendidos
+   - Ranking dos 50 títulos com melhor desempenho
+   - Tabela detalhada dos top 20
+   - Filtros por região e período
+
+3. **Linha do Tempo** - Evolução histórica
+   - Gráfico de vendas por ano (1971-2024)
+   - Análise de tendências regionais
+   - Ciclos de vida de gerações de consoles
+
+4. **Análise de Consoles** - Performance por plataforma
+   - Mapa de calor console-gênero
+   - Especialização de cada plataforma
+   - Market share histórico
+
+5. **Diferenças Regionais** - Preferências por região
+   - Análise de mercados: América do Norte, Japão e PAL
+   - Distribuição de gêneros por região
+   - Vendas comparativas
+
+#### ⚙️ **Recursos Técnicos:**
+
+- ✅ **Bilíngue**: Suporte completo para Inglês 🇺🇸 e Português 🇧🇷
+- ✅ **Design Responsivo**: Otimizado para desktop, tablet e mobile
+- ✅ **Gráficos Interativos**: Powered by Chart.js 4.4.1
+- ✅ **Dark Mode**: Interface moderna com tema escuro
+- ✅ **100% Frontend**: Sem dependências de backend
+- ✅ **Performance**: Carregamento rápido e otimizado
+- ✅ **Acessibilidade**: Navegação clara e intuitiva
 
 ### 📁 Estrutura de Arquivos
 
 ```
-com_html/
-├── index.html          # Estrutura HTML (marcação)
-├── styles.css          # Estilos CSS (design e layout)
-├── script.js           # Lógica JavaScript (dados e interatividade)
-├── page_complete.html  # Versão original (tudo em um arquivo)
-└── README.md          # Este arquivo
+dashboard-video_game_sales/
+├── index.html          # Estrutura HTML (marcação semântica)
+├── style.css           # Estilos CSS (design, layout e responsividade)
+├── script.js           # Lógica JavaScript (dados, gráficos e interatividade)
+├── data.js             # Dataset com 64.016 registros de videogames
+├── README.md           # Este arquivo
 ```
 
-### 🚀 Como Usar
+### 🚀 Instalação e Uso
 
-#### Opção 1: Abrir Localmente
+#### ✨ Opção 1: Abrir Localmente (Simples)
 
-1. Navegue até o diretório do projeto
-2. Abra `index.html` no seu navegador preferido
-3. Clique no botão 🌐 para alternar entre Inglês e Português
+1. Clone ou faça download do repositório:
 
-#### Opção 2: Servidor Local (recomendado)
+   ```bash
+   git clone https://github.com/dimithria/dashboard-video_game_sales.git
+   cd dashboard-video_game_sales
+   ```
+
+2. Abra `index.html` diretamente no seu navegador preferido (Chrome, Firefox, Safari, Edge)
+
+3. Clique no botão 🌐 no header para alternar entre Inglês e Português
+
+#### 🖥️ Opção 2: Servidor Local (Recomendado)
+
+Para melhor compatibilidade e performance, use um servidor local:
+
+**Python 3:**
 
 ```bash
-# Usando Python 3
 python -m http.server 8000
+```
 
-# Usando Python 2
+**Python 2:**
+
+```bash
 python -m SimpleHTTPServer 8000
+```
 
-# Usando Node.js (http-server)
+**Node.js:**
+
+```bash
 npx http-server
 ```
 
-Então acesse: `http://localhost:8000`
+**PHP:**
+
+```bash
+php -S localhost:8000
+```
+
+Acesse: `http://localhost:8000`
+
+### �️ Tecnologias Utilizadas
+
+| Tecnologia            | Descrição                          | Versão |
+| --------------------- | ---------------------------------- | ------ |
+| **HTML5**             | Marcação semântica e estrutura     | -      |
+| **CSS3**              | Design responsivo e dark mode      | -      |
+| **JavaScript**        | Lógica, interatividade e dados     | ES6+   |
+| **Chart.js**          | Biblioteca de gráficos interativos | 4.4.1  |
+| **Responsive Design** | Mobile-first e adaptável           | -      |
+
+**Sem dependências de backend!** Todo o processamento é feito no navegador do cliente.
 
 ### 📊 Dados do Dashboard
 
-| Métrica            | Valor                   |
-| ------------------ | ----------------------- |
-| Títulos Analisados | 64,016                  |
-| Consoles           | 81                      |
-| Gêneros            | 20                      |
-| Período            | 1971-2024               |
-| Regiões            | 4 (NA, JP, PAL, Outros) |
+O dashboard utiliza um dataset completo com **64.016 registros** de videogames:
+
+| Métrica        | Valor                                       |
+| -------------- | ------------------------------------------- |
+| **Títulos**    | 64.016 títulos de videogames                |
+| **Consoles**   | 81 plataformas diferentes                   |
+| **Gêneros**    | 20 gêneros distintos                        |
+| **Período**    | 1971 - 2024 (53 anos de dados)              |
+| **Regiões**    | 4 mercados principais (NA, JP, PAL, Outros) |
+| **Produtoras** | 563 publishers incluindo grandes nomes      |
+
+**Fontes de Dados:**
+
+- Data source: [Maven Analytics Data Playground](https://mavenanalytics.io/data-playground/video-game-sales)
+- Histórico de 53 anos de vendas globais de videogames
+- Dados validados e processados para qualidade
 
 ### 🎨 Paleta de Cores
 
@@ -189,10 +282,47 @@ Não requer Node.js, npm ou outras dependências de backend!
 - Verifique a versão do navegador
 - Tente em modo incógnito
 
-### Fonte
+### 📞 Contato & Suporte
 
-Fonte de dados obtidos gratuitamente no site
-[Maven Analytics](https://mavenanalytics.io/data-playground/video-game-sales)
+Se você tiver dúvidas, sugestões ou encontrar problemas:
+
+1. **GitHub Issues**: [Abrir uma issue](https://github.com/dimithria/dashboard-video_game_sales/issues)
+2. **Discussões**: Participe das discussões do repositório
+3. **Pull Requests**: Contribuições são bem-vindas!
+
+### 🙏 Agradecimentos
+
+- **Maven Analytics** por fornecer o dataset
+- **Chart.js** por excelente biblioteca de gráficos
+- Comunidade open source pelos recursos e inspiração
+
+### 📧 Autor
+
+**Dimitria** - Desenvolvedora Full Stack
+
+- GitHub: [@dimithria](https://github.com/dimithria)
+- Projeto: [Dashboard Video Game Sales](https://github.com/dimithria/dashboard-video_game_sales)
+
+### 🔗 Links Úteis
+
+- [Vue.js Docs](https://vuejs.org/)
+- [Chart.js Documentation](https://www.chartjs.org/)
+- [Maven Analytics](https://mavenanalytics.io/)
+- [Web Dev Resources](https://developer.mozilla.org/)
+
+---
+
+### 🌟 Se Este Projeto Foi Útil
+
+- ⭐ Dê uma estrela no GitHub
+- 🔗 Compartilhe com a comunidade
+- 💬 Deixe feedback e sugestões
+
+---
+
+## 🚀 Contribuindo
+
+Contribuições são bem-vindas! Para melhorias maiores, abra uma issue primeiro para discutir as mudanças propostas.
 
 ---
 
@@ -224,7 +354,6 @@ com_html/
 ├── index.html          # HTML structure (markup)
 ├── styles.css          # CSS styles (design and layout)
 ├── script.js           # JavaScript logic (data and interactivity)
-├── page_complete.html  # Original version (everything in one file)
 └── README.md          # This file
 ```
 
@@ -380,11 +509,45 @@ No Node.js, npm, or other backend dependencies required!
 - Try in incognito mode
 
 ### Font
+
 Data source obtained for free from the
 [Maven Analytics](https://mavenanalytics.io/data-playground/video-game-sales)
 
+### 📞 Contact & Support
+
+Have questions, suggestions, or found issues?
+
+1. **GitHub Issues**: [Open an issue](https://github.com/dimithria/dashboard-video_game_sales/issues)
+2. **Discussions**: Join repository discussions
+3. **Pull Requests**: Contributions welcome!
+
+
+### 📧 Author
+
+**Dimitria** - Full Stack Developer
+
+- GitHub: [@dimithria](https://github.com/dimithria)
+- Project: [Dashboard Video Game Sales](https://github.com/dimithria/dashboard-video_game_sales)
+
+### 🔗 Useful Links
+
+- [Vue.js Docs](https://vuejs.org/)
+- [Chart.js Documentation](https://www.chartjs.org/)
+- [Maven Analytics](https://mavenanalytics.io/)
+- [Web Dev Resources](https://developer.mozilla.org/)
+
 ---
 
-### 🤝 Contributing
+### 🌟 If This Project Was Useful
 
-Found a bug or want to suggest improvements? Feel free to open an issue or submit a pull request.
+- ⭐ Give it a star on GitHub
+- 🔗 Share with the community
+- 💬 Leave feedback and suggestions
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! For major improvements, please open an issue first to discuss the proposed changes.
+
+**Made with ❤️ by [Dimitria](https://github.com/dimithria)**
