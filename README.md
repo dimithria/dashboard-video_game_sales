@@ -4,7 +4,6 @@
 
 Um painel interativo de análise de vendas de videogames com dados de **64.016 títulos** lançados entre **1971-2024**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Frontend](https://img.shields.io/badge/Frontend-100%25-blue)
 ![Responsive](https://img.shields.io/badge/Responsive-Mobile%2FTablet%2FDesktop-success)
 ![Bilingual](https://img.shields.io/badge/Bilingual-EN%2FPT--BR-brightgreen)
