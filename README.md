@@ -289,12 +289,6 @@ Se você tiver dúvidas, sugestões ou encontrar problemas:
 2. **Discussões**: Participe das discussões do repositório
 3. **Pull Requests**: Contribuições são bem-vindas!
 
-### 🙏 Agradecimentos
-
-- **Maven Analytics** por fornecer o dataset
-- **Chart.js** por excelente biblioteca de gráficos
-- Comunidade open source pelos recursos e inspiração
-
 ### 📧 Autor
 
 **Dimitria** - Desenvolvedora Full Stack
